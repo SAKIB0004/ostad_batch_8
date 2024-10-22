@@ -85,28 +85,28 @@ class home extends StatelessWidget {
               ),
               SizedBox(height: 50),
               TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  foregroundColor: Colors.white,
-                  textStyle: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  alignment: Alignment.topCenter,
-                  padding: EdgeInsets.symmetric(horizontal: 60, vertical: 30),
-                  shadowColor: Colors.blue,
-                  elevation: 10,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                    side: BorderSide(
-                      color: Colors.lightBlueAccent,
-                      width: 4,
-                      strokeAlign: 3.5,
-                    ),
-                  ),
-                  maximumSize: Size(200, 100),
-                  minimumSize: Size(200, 100),
-                ),
+                // style: TextButton.styleFrom(
+                //   backgroundColor: Colors.green,
+                //   foregroundColor: Colors.white,
+                //   textStyle: TextStyle(
+                //     fontSize: 18,
+                //     fontWeight: FontWeight.w600,
+                //   ),
+                //   alignment: Alignment.topCenter,
+                //   padding: EdgeInsets.symmetric(horizontal: 60, vertical: 30),
+                //   shadowColor: Colors.blue,
+                //   elevation: 10,
+                //   shape: RoundedRectangleBorder(
+                //     borderRadius: BorderRadius.circular(5),
+                //     side: BorderSide(
+                //       color: Colors.lightBlueAccent,
+                //       width: 4,
+                //       strokeAlign: 3.5,
+                //     ),
+                //   ),
+                //   maximumSize: Size(200, 100),
+                //   minimumSize: Size(200, 100),
+                // ),
                 onPressed: () {
                   print("tapped on Text button 2");
                 },
