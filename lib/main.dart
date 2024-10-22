@@ -21,7 +21,12 @@ class myApp extends StatelessWidget{
 class home extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Home"),
+        backgroundColor: Colors.amber,
+      ),
+    );
   }
 
 }
