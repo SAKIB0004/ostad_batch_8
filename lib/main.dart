@@ -28,9 +28,10 @@ class home extends StatelessWidget {
         ),
         body: Center(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 100,
+                height: 20,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -56,6 +57,28 @@ class home extends StatelessWidget {
                   minimumSize: Size(200, 100),
                 ),
                 onPressed: () {
+                  showDialog(
+                      barrierColor: Colors.amberAccent,
+                      barrierDismissible: false,
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text("Tapped"),
+                          content: Text("Are u sure?"),
+                          actions: [
+                            TextButton(
+                                onPressed: () {
+                                  print("Tapped Yessss");
+                                },
+                                child: Text("Yes")),
+                            TextButton(
+                                onPressed: () {
+                                  print("Tapped Noooo");
+                                },
+                                child: Text("No")),
+                          ],
+                        );
+                      });
                   print("Tapped on elevated button 1");
                 },
                 child: Text("Tap"),
@@ -90,7 +113,7 @@ class home extends StatelessWidget {
                 child: Text("tap"),
               ),
               SizedBox(
-                height: 50,
+                height: 20,
               ),
               IconButton(
                 onPressed: () {
@@ -99,7 +122,7 @@ class home extends StatelessWidget {
                 icon: Icon(Icons.add),
               ),
               SizedBox(
-                height: 50,
+                height: 20,
               ),
               OutlinedButton(
                 style: IconButton.styleFrom(
@@ -111,6 +134,36 @@ class home extends StatelessWidget {
                   print("tapped outline button");
                 },
                 child: Text("click here"),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  print("just one click");
+                },
+                onDoubleTap: () {
+                  print("just double click");
+                },
+                onLongPress: () {
+                  print("on long press click");
+                },
+                onLongPressCancel: () {
+                  print("on long press cancel click");
+                },
+                child: Column(
+                  children: [
+                    Text("text"),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20,),
+              InkWell(
+                splashColor: Colors.lightBlue,
+                onTap: () {
+                  print("Tapped Ink well");
+                },
+                child: Text("Ink Well "),
               ),
             ],
           ),
