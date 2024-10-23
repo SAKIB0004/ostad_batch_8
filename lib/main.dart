@@ -55,7 +55,9 @@ class home extends StatelessWidget {
         title: Text("Home"),
         backgroundColor: Colors.amber,
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+          IconButton(onPressed: () {
+            print("Added");
+          }, icon: Icon(Icons.add)),
           IconButton(onPressed: () {}, icon: Icon(Icons.account_circle)),
         ],
       ),
@@ -86,7 +88,7 @@ class home extends StatelessWidget {
         ],
       ),*/
       bottomNavigationBar: NavigationBar(
-        selectedIndex: 1,
+        selectedIndex: 0,
         onDestinationSelected: (int index) {},
         indicatorColor: Colors.pink,
         //surfaceTintColor: Colors.blue,
