@@ -18,6 +18,7 @@ class myApp extends StatelessWidget{
   }
 }
 
+
 class home extends StatelessWidget{
 
   List<String> friendsList = [
