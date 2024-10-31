@@ -21,7 +21,6 @@ class myApp extends StatelessWidget{
 
 class home extends StatelessWidget{
 
-
   List<String> friendsList = [
     "sakib",
     "skismska1",
@@ -55,6 +54,7 @@ class home extends StatelessWidget{
   TextEditingController _emailTEC = TextEditingController();
   TextEditingController _passwordTEC = TextEditingController();
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -178,7 +178,8 @@ class home extends StatelessWidget{
                       else print("Missing Data");
                     },*/
 
-                  child: Text("Tapped")),
+                  child: Text("Tap")
+              ),
           
             ],
           ),
