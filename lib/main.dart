@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+///Navigation
+
 void main(){
   runApp(myApp());
 }
@@ -23,6 +25,22 @@ class home extends StatelessWidget{
       appBar: AppBar(
         title: Text("Home"),
         backgroundColor: Colors.amber,
+      ),
+
+    );
+  }
+}
+
+class profile extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Home"),
+        backgroundColor: Colors.amber,
+        body: Column(
+
+        )
       ),
     );
   }
