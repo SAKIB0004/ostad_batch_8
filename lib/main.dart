@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,11 +12,20 @@ class CupertinoExpApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Experiment app',
-      home: Home(),
-    );
+
+    if(Platform.isIOS){
+      return CupertinoApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Experiment app',
+        home: Home(),
+      );
+    }
+    else{
+      return MaterialApp(
+        home: Home(),
+      );
+    }
+
   }
 }
 
@@ -47,7 +58,6 @@ class Home extends StatelessWidget {
               trailing: Icon(CupertinoIcons.add_circled),
             ),
             CupertinoTextField(),
-
             CupertinoSwitch(value: false, onChanged: (value){})
 
           ],
