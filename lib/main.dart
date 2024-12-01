@@ -1,28 +1,105 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:io';
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(myApp());
+/// Named Navigation , Stateful widget
+void main() {
+  runApp(SimpleApp());
 }
 
-class myApp extends StatelessWidget{
+class SimpleApp extends StatelessWidget {
+  const SimpleApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Hello World",
-      home: home(),
+      initialRoute: '/',
+      routes: {
+        '/home': (context) => Home(),
+        '/profile': (context) => Profile(),
+        '/settings': (context) => Settings(),
+      },
     );
   }
 }
 
-class home extends StatelessWidget{
+class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
-        backgroundColor: Colors.amber,
+        title: Text('Home'),
+        backgroundColor: Colors.pink,
+      ),
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              // Navigator.push(context,
+              //     MaterialPageRoute(builder:(context)=>Profile(),),);
+
+              Navigator.pushNamed(context, '/profile');
+            },
+            child: Text('Go to profile'),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class Profile extends StatelessWidget {
+  const Profile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Profile'),
+        backgroundColor: Colors.pink,
+      ),
+      body: Column(
+        children: [
+          ElevatedButton(
+              onPressed: () {
+                // Navigator.push(context,
+                //   MaterialPageRoute(builder:(context)=>Settings(),),);
+                Navigator.pushNamed(context, '/settings');
+              },
+              child: Text('Go to Settings'))
+        ],
+      ),
+    );
+  }
+}
+
+class Settings extends StatelessWidget {
+  const Settings({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Settings'),
+        backgroundColor: Colors.pink,
+      ),
+      body: Column(
+        children: [
+          ElevatedButton(
+              onPressed: () {
+                // Navigator.push(context,
+                //   MaterialPageRoute(builder:(context)=>Home(),),);
+
+                //Navigator.pushNamed(context, '/home');
+
+                //Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>Home(),), (predicate)=>false);
+
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/home', (predicate) => false);
+              },
+              child: Text('Go to Home'))
+        ],
       ),
     );
   }
