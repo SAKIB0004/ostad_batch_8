@@ -14,6 +14,7 @@ class myApp extends StatelessWidget{
       home: home(),
     );
   }
+
 }
 
 class home extends StatelessWidget{
@@ -24,6 +25,8 @@ class home extends StatelessWidget{
         title: Text("Home"),
         backgroundColor: Colors.amber,
       ),
+
     );
   }
+
 }
