@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+///MediaQuery | Wrap | LayoutBuilder | OrientationBuilder
+
 void main(){
   runApp(myApp());
 }
@@ -24,6 +26,7 @@ class home extends StatelessWidget{
         title: Text("Home"),
         backgroundColor: Colors.amber,
       ),
+
     );
   }
 }
