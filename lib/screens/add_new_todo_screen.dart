@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ostad_batch_8/screens/todo.dart';
 
 class AddNewTodoScreen extends StatefulWidget {
   const AddNewTodoScreen({super.key});
@@ -10,7 +11,8 @@ class AddNewTodoScreen extends StatefulWidget {
 
 class _AddNewTodoScreenState extends State<AddNewTodoScreen> {
   final TextEditingController _titleTEController = TextEditingController();
-  final TextEditingController _descriptionTEController = TextEditingController();
+  final TextEditingController _descriptionTEController =
+      TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -31,8 +33,8 @@ class _AddNewTodoScreenState extends State<AddNewTodoScreen> {
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   decoration: InputDecoration(
                       labelText: 'Title', hintText: 'Write your title'),
-                  validator: (String? value){
-                    if(value == null || value.trim().isEmpty){
+                  validator: (String? value) {
+                    if (value == null || value.trim().isEmpty) {
                       return 'Enter ur title';
                     }
                     return null;
@@ -48,8 +50,8 @@ class _AddNewTodoScreenState extends State<AddNewTodoScreen> {
                   decoration: InputDecoration(
                       labelText: 'Description',
                       hintText: 'Write your Description'),
-                  validator: (String? value){
-                    if(value == null || value.trim().isEmpty){
+                  validator: (String? value) {
+                    if (value == null || value.trim().isEmpty) {
                       return 'Enter ur Description';
                     }
                     return null;
@@ -60,8 +62,11 @@ class _AddNewTodoScreenState extends State<AddNewTodoScreen> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      if(_formKey.currentState!.validate()){
-
+                      if (_formKey.currentState!.validate()) {
+                        Todo todo = Todo(
+                            title: _titleTEController.text.trim(),
+                            description: _descriptionTEController.text.trim());
+                        Navigator.pop(context, todo );
                       }
                     },
                     child: Text('Add'))
